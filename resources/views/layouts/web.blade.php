@@ -124,7 +124,7 @@
                             </div>
                             <!--end::Heaeder menu toggle-->
                             <a href="{{url('/')}}">
-                                <img alt="Logo" src="{{asset('/assets/media/logos/unep_50.png')}}" class="h-40px h-lg-60px" />
+                                <img alt="Logo" src="{{asset('assets/media/logos/unep_50.png')}}" class="h-40px h-lg-60px" />
                             </a>
                         </div>
                         <!--end::Header Logo-->
@@ -485,7 +485,7 @@
                             @auth
 
                             @if(Auth::user()->role_id == 1 || Auth::user()->role_id == 3)
-                            <a href="/review" class="btn
+                            <a href="review" class="btn
                             @if ($page_title == 'Review Apps')
                             btn-light-primary
 @else
@@ -660,7 +660,7 @@ btn-dark
                                         <!--end::Info-->
                                         <!--begin::User-->
                                         <div class="symbol symbol-circle symbol-25px" data-bs-toggle="tooltip" data-bs-boundary="window" data-bs-placement="top" title="Nina Nilson">
-                                            <img src="{{asset('/assets/media/avatars/300-14.jpg')}}" alt="img" />
+                                            <img src="{{asset('assets/media/avatars/300-14.jpg')}}" alt="img" />
                                         </div>
                                         <!--end::User-->
                                     </div>
