@@ -228,13 +228,13 @@
                                     <!--end::Menu separator-->
                                     <!--begin::Menu item-->
                                     <div class="menu-item px-5">
-                                        <a href="{{url('/profile')}}" class="menu-link px-5">My
+                                        <a href="{{url('profile')}}" class="menu-link px-5">My
                                             Profile*</a>
                                     </div>
                                     <!--end::Menu item-->
                                     <!--begin::Menu item-->
                                     <div class="menu-item px-5">
-                                        <a href="{{url('/applications')}}" class="menu-link px-5">
+                                        <a href="{{url('applications')}}" class="menu-link px-5">
                                             <span class="menu-text">My Applications</span>
                                             @if (Auth::user()->applications->count()>0)
                                             <span class="menu-badge">
@@ -312,7 +312,7 @@
                             </div>
                             <!--end::User -->
                             @if (Auth::user()->applications->count()>0)
-                            <a href="/applications">
+                            <a href="applications">
                                 <div class="d-flex align-items-center ms-3 ms-lg-4">
                                     {{-- id="kt_drawer_chat_toggle" --}}
                                     <!--begin::Drawer wrapper-->

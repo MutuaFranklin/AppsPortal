@@ -78,9 +78,9 @@
                                 <!--begin::Menu item-->
                                 <div class="menu-item px-3">
                                     @if (isset($app->published_by))
-                                    <a href="/unpublish/{{$app->id}}" class="menu-link px-3">Unpublish</a>
+                                    <a href="unpublish/{{$app->id}}" class="menu-link px-3">Unpublish</a>
                                     @else
-                                    <a href="/publish/{{$app->id}}" class="menu-link px-3">Publish</a>
+                                    <a href="publish/{{$app->id}}" class="menu-link px-3">Publish</a>
                                     @endif
                                 </div>
                                 <!--end::Menu item-->
@@ -88,7 +88,7 @@
 
                                 <!--begin::Menu item-->
                                 <div class="menu-item px-3">
-                                    <a href="/edit/{{$app->id}}" class="menu-link px-3">Edit</a>
+                                    <a href="edit/{{$app->id}}" class="menu-link px-3">Edit</a>
                                 </div>
                                 <!--end::Menu item-->
                                 @if (Auth::user()->role_id == 1)
