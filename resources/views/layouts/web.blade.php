@@ -726,7 +726,7 @@ btn-dark
                                         <div class="symbol-group symbol-hover flex-nowrap flex-grow-1 min-w-100px">
                                             <!--begin::User-->
                                             <div class="symbol symbol-circle symbol-25px">
-                                                <img src="{{asset('/assets/media/avatars/300-20.jpg')}}" alt="img" />
+                                                <img src="{{asset('assets/media/avatars/300-20.jpg')}}" alt="img" />
                                             </div>
                                             <!--end::User-->
                                             <!--begin::User-->
@@ -789,7 +789,7 @@ btn-dark
                                         <!--end::Info-->
                                         <!--begin::User-->
                                         <div class="symbol symbol-circle symbol-25px" data-bs-toggle="tooltip" data-bs-boundary="window" data-bs-placement="top" title="Alan Nilson">
-                                            <img src="{{asset('/assets/media/avatars/300-1.jpg')}}" alt="img" />
+                                            <img src="{{asset('assets/media/avatars/300-1.jpg')}}" alt="img" />
                                         </div>
                                         <!--end::User-->
                                     </div>
@@ -834,7 +834,7 @@ btn-dark
                                         <!--end::Info-->
                                         <!--begin::User-->
                                         <div class="symbol symbol-circle symbol-25px" data-bs-toggle="tooltip" data-bs-boundary="window" data-bs-placement="top" title="Jan Hummer">
-                                            <img src="{{asset('/assets/media/avatars/300-23.jpg')}}" alt="img" />
+                                            <img src="{{asset('assets/media/avatars/300-23.jpg')}}" alt="img" />
                                         </div>
                                         <!--end::User-->
                                     </div>
@@ -847,7 +847,7 @@ btn-dark
                                         <!--begin::Item-->
                                         <div class="d-flex flex-aligns-center pe-10 pe-lg-20">
                                             <!--begin::Icon-->
-                                            <img alt="" class="w-30px me-3" src="{{asset('/assets/media/svg/files/pdf.svg')}}" />
+                                            <img alt="" class="w-30px me-3" src="{{asset('assets/media/svg/files/pdf.svg')}}" />
                                             <!--end::Icon-->
                                             <!--begin::Info-->
                                             <div class="ms-1 fw-bold">
@@ -862,7 +862,7 @@ btn-dark
                                         <!--begin::Item-->
                                         <div class="d-flex flex-aligns-center pe-10 pe-lg-20">
                                             <!--begin::Icon-->
-                                            <img alt="../../demo11/dist/apps/projects/project.html" class="w-30px me-3" src="{{asset('/assets/media/svg/files/doc.svg')}}" />
+                                            <img alt="../../demo11/dist/apps/projects/project.html" class="w-30px me-3" src="{{asset('assets/media/svg/files/doc.svg')}}" />
                                             <!--end::Icon-->
                                             <!--begin::Info-->
                                             <div class="ms-1 fw-bold">
@@ -881,7 +881,7 @@ btn-dark
                                         <!--begin::Item-->
                                         <div class="d-flex flex-aligns-center">
                                             <!--begin::Icon-->
-                                            <img alt="../../demo11/dist/apps/projects/project.html" class="w-30px me-3" src="{{asset('/assets/media/svg/files/css.svg')}}" />
+                                            <img alt="../../demo11/dist/apps/projects/project.html" class="w-30px me-3" src="{{asset('assets/media/svg/files/css.svg')}}" />
                                             <!--end::Icon-->
                                             <!--begin::Info-->
                                             <div class="ms-1 fw-bold">
@@ -940,7 +940,7 @@ btn-dark
                                         <!--end::Info-->
                                         <!--begin::User-->
                                         <div class="symbol symbol-circle symbol-25px" data-bs-toggle="tooltip" data-bs-boundary="window" data-bs-placement="top" title="Nina Nilson">
-                                            <img src="{{asset('/assets/media/avatars/300-14.jpg')}}" alt="img" />
+                                            <img src="{{asset('assets/media/avatars/300-14.jpg')}}" alt="img" />
                                         </div>
                                         <!--end::User-->
                                     </div>
@@ -984,7 +984,7 @@ btn-dark
                                         <!--end::Info-->
                                         <!--begin::User-->
                                         <div class="symbol symbol-circle symbol-25px" data-bs-toggle="tooltip" data-bs-boundary="window" data-bs-placement="top" title="Marcus Dotson">
-                                            <img src="{{asset('/assets/media/avatars/300-2.jpg')}}" alt="img" />
+                                            <img src="{{asset('assets/media/avatars/300-2.jpg')}}" alt="img" />
                                         </div>
                                         <!--end::User-->
                                     </div>
@@ -998,7 +998,7 @@ btn-dark
                                         <div class="overlay me-10">
                                             <!--begin::Image-->
                                             <div class="overlay-wrapper">
-                                                <img alt="img" class="rounded w-150px" src="{{asset('/assets/media/stock/600x400/img-29.jpg')}}" />
+                                                <img alt="img" class="rounded w-150px" src="{{asset('assets/media/stock/600x400/img-29.jpg')}}" />
                                             </div>
                                             <!--end::Image-->
                                             <!--begin::Link-->
@@ -1012,7 +1012,7 @@ btn-dark
                                         <div class="overlay me-10">
                                             <!--begin::Image-->
                                             <div class="overlay-wrapper">
-                                                <img alt="img" class="rounded w-150px" src="{{asset('/assets/media/stock/600x400/img-31.jpg')}}" />
+                                                <img alt="img" class="rounded w-150px" src="{{asset('assets/media/stock/600x400/img-31.jpg')}}" />
                                             </div>
                                             <!--end::Image-->
                                             <!--begin::Link-->
@@ -1026,7 +1026,7 @@ btn-dark
                                         <div class="overlay">
                                             <!--begin::Image-->
                                             <div class="overlay-wrapper">
-                                                <img alt="img" class="rounded w-150px" src="{{asset('/assets/media/stock/600x400/img-40.jpg')}}" />
+                                                <img alt="img" class="rounded w-150px" src="{{asset('assets/media/stock/600x400/img-40.jpg')}}" />
                                             </div>
                                             <!--end::Image-->
                                             <!--begin::Link-->
@@ -1126,7 +1126,7 @@ btn-dark
                                         <!--end::Info-->
                                         <!--begin::User-->
                                         <div class="symbol symbol-circle symbol-25px" data-bs-toggle="tooltip" data-bs-boundary="window" data-bs-placement="top" title="Robert Rich">
-                                            <img src="{{asset('/assets/media/avatars/300-4.jpg')}}" alt="img" />
+                                            <img src="{{asset('assets/media/avatars/300-4.jpg')}}" alt="img" />
                                         </div>
                                         <!--end::User-->
                                     </div>
@@ -1354,7 +1354,7 @@ btn-dark
                             <div class="d-flex align-items-center mb-2">
                                 <!--begin::Avatar-->
                                 <div class="symbol symbol-35px symbol-circle">
-                                    <img alt="Pic" src="{{asset('/assets/media/avatars/300-25.jpg')}}" />
+                                    <img alt="Pic" src="{{asset('assets/media/avatars/300-25.jpg')}}" />
                                 </div>
                                 <!--end::Avatar-->
                                 <!--begin::Details-->
@@ -1388,7 +1388,7 @@ btn-dark
                                 <!--end::Details-->
                                 <!--begin::Avatar-->
                                 <div class="symbol symbol-35px symbol-circle">
-                                    <img alt="Pic" src="{{asset('/assets/media/avatars/300-1.jpg')}}" />
+                                    <img alt="Pic" src="{{asset('assets/media/avatars/300-1.jpg')}}" />
                                 </div>
                                 <!--end::Avatar-->
                             </div>
@@ -1410,7 +1410,7 @@ btn-dark
                             <div class="d-flex align-items-center mb-2">
                                 <!--begin::Avatar-->
                                 <div class="symbol symbol-35px symbol-circle">
-                                    <img alt="Pic" src="{{asset('/assets/media/avatars/300-25.jpg')}}" />
+                                    <img alt="Pic" src="{{asset('assets/media/avatars/300-25.jpg')}}" />
                                 </div>
                                 <!--end::Avatar-->
                                 <!--begin::Details-->
@@ -1443,7 +1443,7 @@ btn-dark
                                 <!--end::Details-->
                                 <!--begin::Avatar-->
                                 <div class="symbol symbol-35px symbol-circle">
-                                    <img alt="Pic" src="{{asset('/assets/media/avatars/300-1.jpg')}}" />
+                                    <img alt="Pic" src="{{asset('assets/media/avatars/300-1.jpg')}}" />
                                 </div>
                                 <!--end::Avatar-->
                             </div>
@@ -1464,7 +1464,7 @@ btn-dark
                             <div class="d-flex align-items-center mb-2">
                                 <!--begin::Avatar-->
                                 <div class="symbol symbol-35px symbol-circle">
-                                    <img alt="Pic" src="{{asset('/assets/media/avatars/300-25.jpg')}}" />
+                                    <img alt="Pic" src="{{asset('assets/media/avatars/300-25.jpg')}}" />
                                 </div>
                                 <!--end::Avatar-->
                                 <!--begin::Details-->
@@ -1494,7 +1494,7 @@ btn-dark
                                 <!--end::Details-->
                                 <!--begin::Avatar-->
                                 <div class="symbol symbol-35px symbol-circle">
-                                    <img alt="Pic" src="{{asset('/assets/media/avatars/300-1.jpg')}}" />
+                                    <img alt="Pic" src="{{asset('assets/media/avatars/300-1.jpg')}}" />
                                 </div>
                                 <!--end::Avatar-->
                             </div>
@@ -1512,7 +1512,7 @@ btn-dark
                             <div class="d-flex align-items-center mb-2">
                                 <!--begin::Avatar-->
                                 <div class="symbol symbol-35px symbol-circle">
-                                    <img alt="Pic" src="{{asset('/assets/media/avatars/300-25.jpg')}}" />
+                                    <img alt="Pic" src="{{asset('assets/media/avatars/300-25.jpg')}}" />
                                 </div>
                                 <!--end::Avatar-->
                                 <!--begin::Details-->
@@ -1547,7 +1547,7 @@ btn-dark
                                 <!--end::Details-->
                                 <!--begin::Avatar-->
                                 <div class="symbol symbol-35px symbol-circle">
-                                    <img alt="Pic" src="{{asset('/assets/media/avatars/300-1.jpg')}}" />
+                                    <img alt="Pic" src="{{asset('assets/media/avatars/300-1.jpg')}}" />
                                 </div>
                                 <!--end::Avatar-->
                             </div>
@@ -1567,7 +1567,7 @@ btn-dark
                             <div class="d-flex align-items-center mb-2">
                                 <!--begin::Avatar-->
                                 <div class="symbol symbol-35px symbol-circle">
-                                    <img alt="Pic" src="{{asset('/assets/media/avatars/300-25.jpg')}}" />
+                                    <img alt="Pic" src="{{asset('assets/media/avatars/300-25.jpg')}}" />
                                 </div>
                                 <!--end::Avatar-->
                                 <!--begin::Details-->
@@ -2066,7 +2066,7 @@ btn-dark
                                             </label>
                                             <!--end::Label-->
                                             <!--begin::Image input-->
-                                            <div class="image-input image-input-empty" data-kt-image-input="true" style="background-image: url(/assets/media/svg/avatars/ph.svg)">
+                                            <div class="image-input image-input-empty" data-kt-image-input="true" style="background-image: url(assets/media/svg/avatars/ph.svg)">
                                                 <!--begin::Image preview wrapper-->
                                                 <div class="image-input-wrapper w-200px h-125px"></div>
                                                 <!--end::Image preview wrapper-->
@@ -2413,7 +2413,7 @@ btn-dark
                                         <!--end::Description-->
                                         <!--begin::Illustration-->
                                         <div class="text-center px-4 py-15">
-                                            <img src="{{asset('/assets/media/illustrations/sketchy-1/5-dark.png')}}" alt="" class="mw-100 mh-300px" />
+                                            <img src="{{asset('assets/media/illustrations/sketchy-1/5-dark.png')}}" alt="" class="mw-100 mh-300px" />
                                         </div>
                                         <!--end::Illustration-->
                                     </div>
@@ -2990,7 +2990,7 @@ btn-dark
                                 <div class="d-flex align-items-center">
                                     <!--begin::Avatar-->
                                     <div class="symbol symbol-35px symbol-circle">
-                                        <img alt="User Image" src="{{$dev->dp_url?$dev->dp_url: asset('/assets/media/uploads/user_images/blank_user.png')}}" />
+                                        <img alt="User Image" src="{{$dev->dp_url?$dev->dp_url: asset('assets/media/uploads/user_images/blank_user.png')}}" />
                                     </div>
                                     <!--end::Avatar-->
                                     <!--begin::Details-->

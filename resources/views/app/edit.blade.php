@@ -177,7 +177,7 @@
                             </label>
                             <!--end::Label-->
                             <!--begin::Image input-->
-                            <div class="image-input image-input-empty" data-kt-image-input="true" style="background-image: url(/assets/media/uploads/{{$app->display_image}})">
+                            <div class="image-input image-input-empty" data-kt-image-input="true" style="background-image: url(assets/media/uploads/{{$app->display_image}})">
                                 <!--begin::Image preview wrapper-->
                                 <div class="image-input-wrapper w-200px h-125px"></div>
                                 <!--end::Image preview wrapper-->

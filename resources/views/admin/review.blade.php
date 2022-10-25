@@ -29,7 +29,7 @@
                         <td>
                             <div class="d-flex align-items-center w-10 ">
                                 <div class="symbol symbol-50px me-2">
-                                    <img src="/assets/media/uploads/{{$app->display_image}}" class="" alt="">
+                                    <img src="assets/media/uploads/{{$app->display_image}}" class="" alt="">
                                 </div>
                                 <div class="d-flex justify-content-start flex-column w-10 ">
                                     <a href="{{$app->link}}" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">{{$app->name}}</a>
