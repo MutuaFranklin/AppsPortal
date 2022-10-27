@@ -209,7 +209,7 @@
                                         <div class="menu-content d-flex align-items-center px-3">
                                             <!--begin::Avatar-->
                                             <div class="symbol symbol-50px me-5">
-                                                <img alt="User Image" src="{{auth()->user()->dp_url?auth()->user()->dp_url: asset('/assets/media/uploads/user_images/blank_user.png')}}" />
+                                                <img alt="User Image" src="{{auth()->user()->dp_url?auth()->user()->dp_url: asset('assets/media/uploads/user_images/blank_user.png')}}" />
                                             </div>
                                             <!--end::Avatar-->
                                             <!--begin::Username-->
