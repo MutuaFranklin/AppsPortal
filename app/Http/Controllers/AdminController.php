@@ -57,9 +57,10 @@ class AdminController extends Controller
 
         // print_r(isset($application['usage_internal']) ? $application['usage_internal'] : "usage internal not set");
         // print_r(isset($application['usage_external']) ? $application['usage_external'] : "usage external not set");
-
+        $public_path = env('public_path');
         $imageName = time() . '.' . $form->display_image->extension();
-        $form->display_image->move(public_path('assets/media/uploads'), $imageName);
+        // $form->display_image->move(public_path('assets/media/uploads'), $imageName);
+        $form->display_image->move($public_path.'assets/media/uploads', $imageName);
 
         $application = $form->toArray();
         if (!isset($application['developers'])) {
@@ -115,6 +116,7 @@ class AdminController extends Controller
         // print_r(isset($application['usage_internal']) ? $application['usage_internal'] : "usage internal not set");
         // print_r(isset($application['usage_external']) ? $application['usage_external'] : "usage external not set");
 
+        $public_path = env('public_path');
         $new_details = [];
         $imageName = Application::where('id', $id)->first()->display_image;
         if (isset($form->display_image)) {
