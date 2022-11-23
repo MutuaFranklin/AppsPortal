@@ -121,7 +121,9 @@ class AdminController extends Controller
         $imageName = Application::where('id', $id)->first()->display_image;
         if (isset($form->display_image)) {
             $imageName = time() . '.' . $form->display_image->extension();
-            $form->display_image->move(public_path('assets/media/uploads'), $imageName);
+            // $form->display_image->move(public_path('assets/media/uploads'), $imageName);
+            $form->display_image->move($public_path.'assets/media/uploads', $imageName);
+
             $new_details['display_image'] = $imageName;
         }
 
