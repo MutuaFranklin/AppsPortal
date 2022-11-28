@@ -87,16 +87,16 @@
                         <!--begin::Topbar-->
                         <div class="right align-right align-items-center flex-shrink-0">
                             @guest
-                            <a href="register" class="btn p-2 fw-bolder
+                            <a href="Register" class="btn p-2 fw-bolder
                             @if($page_title == 'Register')
                                 btn-primary
                             @endif
-                            text-white">Register</a>
+                            text-white">Register as Developer</a>
                             <a href="login" class="btn p-2 fw-bolder
                             @if($page_title == 'Login')
                             btn-primary
                             @endif
-                            text-white">Login</a>
+                            text-white">Login as Developer</a>
                             @endguest
                             <!--begin::Sidebar Toggler-->
                             <!--end::Sidebar Toggler-->
@@ -422,7 +422,7 @@
                                     <div class="separator border-gray-200"></div>
                                     <!--end::Menu separator-->
                                     <!--begin::Form-->
-                                    <div class="px-7 py-5">
+                                    <div class="px-7 py-5" >
                                         <!--begin::Input group-->
                                         <div class="mb-10">
                                             <!--begin::Label-->
@@ -430,7 +430,7 @@
                                             <!--end::Label-->
                                             <!--begin::Input-->
                                             <div>
-                                                <select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Select option" data-dropdown-parent="#kt_menu_624448b7ac77c" data-allow-clear="true">
+                                                <select class="form-select form-select-solid">
                                                     <option></option>
                                                     <option value="All">All</option>
                                                     @foreach ($status as $s)
