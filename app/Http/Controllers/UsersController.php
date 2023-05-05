@@ -35,12 +35,38 @@ class UsersController extends Controller
             $labels[] = $status->name;
             $i++;
         }
+        // get the search value from the request
+        $search = request('search');
+
+        // get the status value from the request
+        $status = request('status');
+
+        $internal = request('internal');
+        $external = request('external');
 
         return [
             'page_title' => 'Home',
             'page_type' => 'normal',
             'applications' => Application::get(),
-            'published_applications' => Application::whereNotNull('published_by')->get(),
+            'published_applications' => Application::when(request('status'), function($query) {
+                return $query->where('status_id', request('status'));
+            })
+            ->when(request('search'), function($query) {
+                $search = request('search');
+                return $query->where(function($query) use ($search) {
+                    $query->where('name', 'LIKE', '%'.$search.'%')
+                          ->orWhere('description', 'LIKE', '%'.$search.'%');
+                });
+            })
+            ->when($internal, function($query) {
+                return $query->where('internal', 1);
+            })
+            ->when($external, function($query) {
+                return $query->where('internal', 0);
+            })
+            ->whereNotNull('published_by')
+            ->paginate(4),               
+            // 'published_applications' => Application::whereNotNull('published_by')->paginate(4),
             'users_count' => Application::sum('internal_users_no') + Application::sum('external_users_no'),
             'max_users' => !empty($user_base) ? max($user_base) : 0,
             'min_users' => !empty($user_base) ? min($user_base) : 0,
@@ -54,6 +80,8 @@ class UsersController extends Controller
     {
         return view('index')->with($this->baseData());
     }
+
+    
 
     public function postLogin(request $req)
     {

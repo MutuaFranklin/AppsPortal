@@ -159,14 +159,7 @@ No Applications published
     <!--begin::Controls-->
     <div class="d-flex flex-wrap my-1">
         <!--begin::Select wrapper-->
-        <div class="m-0">
-            <select name="status" data-control="select2" data-hide-search="true" class="form-select form-select-sm form-select-solid fw-bolder w-125px">
-                <option value="All" selected="selected">All</option>
-                @foreach ($status as $s)
-                <option value="{{$s->id}}">{{$s->name}}</option>
-                @endforeach
-            </select>
-        </div>
+       
         <!--end::Select wrapper-->
     </div>
     <!--end::Controls-->
@@ -177,7 +170,7 @@ No Applications published
 
     @foreach ($published_applications as $app)
     <!--begin::Col-->
-    <div class="col-md-6 col-xl-4">
+    <div class="col-md-6 col-xl-3">
         <!--begin::Card-->
         <a target="_blank" href="{{$app->link}}" class="card border-hover-primary">
             <!--begin::Card header-->
@@ -315,38 +308,34 @@ No Applications published
 <!--end::Row-->
 <!--begin::Pagination-->
 <div class="d-flex flex-stack flex-wrap pt-10">
-    <div class="fs-6 fw-bold text-gray-700">Showing 1 to 10 of 50 entries</div>
+    <div class="fs-6 fw-bold text-gray-700">{{ 'Showing ' . $published_applications->firstItem() . ' to ' . $published_applications->lastItem() . ' of ' . $published_applications->total() . ' entries' }}
+    </div>
     <!--begin::Pages-->
     <ul class="pagination">
-        <li class="page-item previous">
-            <a href="#" class="page-link">
-                <i class="previous"></i>
-            </a>
-        </li>
-        <li class="page-item active">
-            <a href="#" class="page-link">1</a>
-        </li>
-        <li class="page-item">
-            <a href="#" class="page-link">2</a>
-        </li>
-        <li class="page-item">
-            <a href="#" class="page-link">3</a>
-        </li>
-        <li class="page-item">
-            <a href="#" class="page-link">4</a>
-        </li>
-        <li class="page-item">
-            <a href="#" class="page-link">5</a>
-        </li>
-        <li class="page-item">
-            <a href="#" class="page-link">6</a>
-        </li>
-        <li class="page-item next">
-            <a href="#" class="page-link">
-                <i class="next"></i>
-            </a>
-        </li>
+        {{-- Previous Page Link --}}
+        @if ($published_applications->onFirstPage())
+            <li class="disabled page-item"><span class="page-link">&laquo;</span></li>
+        @else
+            <li class="page-item"><a class="page-link" href="{{ $published_applications->previousPageUrl() }}" rel="prev">&laquo;</a></li>
+        @endif
+    
+        {{-- Pagination Elements --}}
+        @for ($i = 1; $i <= $published_applications->lastPage(); $i++)
+            @if ($i == $published_applications->currentPage())
+                <li class="page-item active"><span class="page-link">{{ $i }}</span></li>
+            @else
+                <li class="page-item"><a class="page-link" href="{{ $published_applications->url($i) }}">{{ $i }}</a></li>
+            @endif
+        @endfor
+    
+        {{-- Next Page Link --}}
+        @if ($published_applications->hasMorePages())
+            <li class="page-item"><a class="page-link" href="{{ $published_applications->nextPageUrl() }}" rel="next">&raquo;</a></li>
+        @else
+            <li class="disabled page-item"><span class="page-link">&raquo;</span></li>
+        @endif
     </ul>
+    
     <!--end::Pages-->
 </div>
 <!--end::Pagination-->

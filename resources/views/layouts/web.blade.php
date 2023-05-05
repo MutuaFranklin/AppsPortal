@@ -28,6 +28,7 @@
     <link href="{{asset('/assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('/assets/css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="{{asset('/assets/css/app.css')}}" rel="stylesheet" type="text/css" />
     <style>
         * {
             /* font-family: 'Roboto', sans-serif !important; */
@@ -83,11 +84,11 @@
             <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
                 @guest
                 <div class="bg-black d-flex flex-column align-items-end">
-                    <div class="container-xxl d-flex flex-column align-items-end">
+                    <div class="container-fluid-xxl d-flex flex-column align-items-end">
                         <!--begin::Topbar-->
                         <div class="right align-right align-items-center flex-shrink-0">
                             @guest
-                            <a href="Register" class="btn p-2 fw-bolder
+                            <a href="register" class="btn p-2 fw-bolder
                             @if($page_title == 'Register')
                                 btn-primary
                             @endif
@@ -108,7 +109,7 @@
                 <!--begin::Header-->
                 <div id="kt_header" class="header" data-kt-sticky="true" data-kt-sticky-name="header" data-kt-sticky-offset="{default: '200px', lg: '300px'}">
                     <!--begin::Container-->
-                    <div class="container-xxl d-flex flex-grow-1 flex-stack">
+                    <div class="container-fluid d-flex flex-grow-1 flex-stack">
                         <!--begin::Header Logo-->
                         <div class="d-flex align-items-center ">
                             <!--begin::Heaeder menu toggle-->
@@ -124,7 +125,7 @@
                             </div>
                             <!--end::Heaeder menu toggle-->
                             <a href="{{url('/')}}">
-                                <img alt="Logo" src="{{asset('assets/media/logos/unep_50.png')}}" class="h-40px h-lg-60px" />
+                                <img alt="Logo" src="{{asset('assets/media/logos/apps-portal.png')}}" class="h-45px h-lg-45px" />
                             </a>
                         </div>
                         <!--end::Header Logo-->
@@ -147,7 +148,7 @@
                                 </div>
                                 <!--end::Tablet and mobile search toggle-->
                                 <!--begin::Form(use d-none d-lg-block classes for responsive search)-->
-                                <form class="d-none d-lg-block w-100 position-relative mb-2 mb-lg-0" action="{{route('searchApp')}}" method="GET">
+                                <form class="d-none d-lg-block w-100 position-relative mb-2 mb-lg-0" action="{{route('index')}}" method="GET">
                                     <!--begin::Hidden input(Added to disable form autocomplete)-->
                                     <input type="hidden" />
                                     <!--end::Hidden input-->
@@ -161,8 +162,10 @@
                                     </span>
                                     <!--end::Svg Icon-->
                                     <!--end::Icon-->
-                                    <!--begin::Input-->
-                                    <input type="text" class="form-control bg-transparent ps-13 fs-7 h-40px" name="term" placeholder="Quick Search" data-kt-search-element="input" value="{{isset($term)?$term:''}}" />
+                                    <!--begin::Input-->                                    
+                                    <input type="text" class="form-control bg-transparent ps-13 fs-7 h-40px" name="search" id="search" placeholder="Quick Search" data-kt-search-element="input" value="{{ $search ?? '' }}" />
+
+                                    {{-- <input type="text" class="form-control bg-transparent ps-13 fs-7 h-40px" name="term" placeholder="Quick Search" data-kt-search-element="input" value="{{isset($term)?$term:''}}" /> --}}
                                     <!--end::Input-->
                                     <!--begin::Spinner-->
                                     <span class="position-absolute top-50 end-0 translate-middle-y lh-0 d-none me-5" data-kt-search-element="spinner">
@@ -338,25 +341,22 @@
                 </div>
                 <!--end::Header-->
                 <!--begin::Toolbar-->
-                <div class="toolbar py-5 py-lg-5" id="kt_toolbar">
+                <div class="toolbar py-7 py-lg-7" id="kt_toolbar">
                     <!--begin::Container-->
-                    <div id="kt_toolbar_container" class="container-xxl d-flex flex-stack flex-wrap">
+                    <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack flex-wrap">
                         <!--begin::Page title-->
                         <div class="page-title d-flex flex-column me-3">
-                            <!--begin::Title-->
-                            <h1 class="d-flex text-dark fw-bolder my-1 fs-3">Applications Portal</h1>
-                            <!--end::Title-->
                             @if($page_type !== 'auth')
                             @if($page_type == 'page')
                             <!--begin::Breadcrumb-->
-                            <ul class="breadcrumb breadcrumb-dot fw-bold text-gray-600 fs-7 my-1">
+                            <ul class="breadcrumb breadcrumb-dot fw-bold  fs-7 my-1">
                                 <!--begin::Item-->
-                                <li class="breadcrumb-item text-gray-600">
-                                    <a href="{{url('/')}}" class="text-gray-600 text-hover-primary">Home</a>
+                                <li class="breadcrumb-item">
+                                    <a href="{{url('/')}}" class="text-style">Home</a>
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
-                                <li class="breadcrumb-item text-gray-600">Review Apps</li>
+                                <li class="breadcrumb-item text-style">Review Apps</li>
                                 <!--end::Item-->
                             </ul>
                             <!--end::Breadcrumb-->
@@ -364,8 +364,8 @@
                             <!--begin::Breadcrumb-->
                             <ul class="breadcrumb breadcrumb-dot fw-bold text-gray-600 fs-7 my-1">
                                 <!--begin::Item-->
-                                <li class="breadcrumb-item text-gray-600">
-                                    <a href="{{url('/')}}" class="text-gray-600 text-hover-primary">Home</a>
+                                <li class="breadcrumb-item">
+                                    <a href="{{url('/')}}" class="text-style">Home</a>
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
@@ -392,11 +392,11 @@
                                 <ul class="breadcrumb breadcrumb-dot fw-bold text-gray-600 fs-7 my-1">
                                     <!--begin::Item-->
                                     <li class="breadcrumb-item text-gray-600">
-                                        <a href="{{url('/')}}" class="text-gray-600 text-hover-primary">Home</a>
+                                        <a href="{{url('/')}}" class="text-style">Home</a>
                                     </li>
                                     <!--end::Item-->
                                     <!--begin::Item-->
-                                    <li class="breadcrumb-item text-gray-600">{{$page_title}}</li>
+                                    <li class="breadcrumb-item text-style">{{$page_title}}</li>
                                     <!--end::Item-->
                                 </ul>
                                 <!--end::Breadcrumb-->
@@ -412,69 +412,77 @@
                                     <!--end::Svg Icon-->Filter
                                 </a>
                                 <!--begin::Menu 1-->
-                                <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" id="kt_menu_624448b7ac77c">
-                                    <!--begin::Header-->
-                                    <div class="px-7 py-5">
-                                        <div class="fs-5 text-dark fw-bolder">Filter Options</div>
-                                    </div>
-                                    <!--end::Header-->
-                                    <!--begin::Menu separator-->
-                                    <div class="separator border-gray-200"></div>
-                                    <!--end::Menu separator-->
-                                    <!--begin::Form-->
-                                    <div class="px-7 py-5" >
-                                        <!--begin::Input group-->
-                                        <div class="mb-10">
-                                            <!--begin::Label-->
-                                            <label class="form-label fw-bold">Status:</label>
-                                            <!--end::Label-->
-                                            <!--begin::Input-->
-                                            <div>
-                                                <select class="form-select form-select-solid">
-                                                    <option></option>
-                                                    <option value="All">All</option>
-                                                    @foreach ($status as $s)
-                                                    <option value="{{$s->id}}">{{$s->name}}</option>
-                                                    @endforeach
-                                                </select>
+                                    <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" id="kt_menu_624448b7ac77c">
+                                        <!--begin::Header-->
+                                        <div class="px-7 py-5">
+                                            <div class="fs-5 text-dark fw-bolder">Filter Options</div>
+                                        </div>
+                                        <!--end::Header-->
+                                        <!--begin::Menu separator-->
+                                        <div class="separator border-gray-200"></div>
+                                        <!--end::Menu separator-->
+                                        <!--begin::Form-->
+                                        <form action="" method="get" action="{{route('index')}}">
+                                            <div class="px-7 py-5" >
+                                                <!--begin::Input group-->
+                                                <div class="mb-10">
+                                                    <!--begin::Label-->
+                                                    <label class="form-label fw-bold">Status:</label>
+                                                    <!--end::Label-->
+                                                    <!--begin::Input-->
+                                                    <div>
+                                                        
+                                                        <select class="form-select form-select-solid" name="status" id="status" >
+                                                            <option></option>
+                                                            @foreach ($status as $s)
+                                                            <option value="{{ $s->id }}" {{ request('status') == $s->id ? 'selected' : '' }}>{{ $s->name }}</option>
+                                                            @endforeach
+                                                        </select>
+                                                        {{-- <select class="form-select form-select-solid" name="status" id="status" onchange="this.form.submit()">
+                                                            <option value="">All statuses</option>
+                                                            <option value="1" {{ $status == '1' ? 'selected' : '' }}>In Testing</option>
+                                                            <option value="2" {{ $status == '2' ? 'selected' : '' }}>In Production</option>
+                                                        </select> --}}
+                                                    </div>
+                                                    <!--end::Input-->
+                                                </div>
+                                                <!--end::Input group-->
+                                                <!--begin::Input group-->
+                                                <div class="mb-10">
+                                                    <!--begin::Label-->
+                                                    <label class="form-label fw-bold">Audience:</label>
+                                                    <!--end::Label-->
+                                                    <!--begin::Options-->
+                                                    <div class="d-flex">
+                                                        <!--begin::Options-->
+                                                        <label class="form-check form-check-sm form-check-custom form-check-solid me-5">
+                                                            <input class="form-check-input" type="checkbox" id="internal" name="internal" value="1" {{ request('internal') ? 'checked' : '' }} />
+                                                            <span class="form-check-label">Internal</span>
+                                                        </label>
+                                                        <!--end::Options-->
+                                                        <!--begin::Options-->
+                                                        <label class="form-check form-check-sm form-check-custom form-check-solid">
+                                                            <input class="form-check-input" type="checkbox" id="external" name="external" value="1" {{ request('external') ? 'checked' : '' }}/>
+                                                            <span class="form-check-label">External</span>
+                                                        </label>
+                                                        <!--end::Options-->
+                                                    </div>
+                                                    <!--end::Options-->
+                                                </div>
+                                                <!--end::Input group-->
+                                                <!--begin::Input group-->
+                                                <!--end::Input group-->
+                                                <!--begin::Actions-->
+                                                <div class="d-flex justify-content-end">
+                                                    <a href="{{url('/')}}" class="btn btn-sm btn-light btn-active-light-primary me-2" id="reset-btn">Reset</a>
+                                                    <button type="submit" class="btn btn-sm btn-primary" data-kt-menu-dismiss="true">Apply</button>
+                                                </div>
+                                                <!--end::Actions-->
                                             </div>
-                                            <!--end::Input-->
-                                        </div>
-                                        <!--end::Input group-->
-                                        <!--begin::Input group-->
-                                        <div class="mb-10">
-                                            <!--begin::Label-->
-                                            <label class="form-label fw-bold">Audience:</label>
-                                            <!--end::Label-->
-                                            <!--begin::Options-->
-                                            <div class="d-flex">
-                                                <!--begin::Options-->
-                                                <label class="form-check form-check-sm form-check-custom form-check-solid me-5">
-                                                    <input class="form-check-input" type="checkbox" value="1" />
-                                                    <span class="form-check-label">Internal</span>
-                                                </label>
-                                                <!--end::Options-->
-                                                <!--begin::Options-->
-                                                <label class="form-check form-check-sm form-check-custom form-check-solid">
-                                                    <input class="form-check-input" type="checkbox" value="2" checked="checked" />
-                                                    <span class="form-check-label">External</span>
-                                                </label>
-                                                <!--end::Options-->
-                                            </div>
-                                            <!--end::Options-->
-                                        </div>
-                                        <!--end::Input group-->
-                                        <!--begin::Input group-->
-                                        <!--end::Input group-->
-                                        <!--begin::Actions-->
-                                        <div class="d-flex justify-content-end">
-                                            <button type="reset" class="btn btn-sm btn-light btn-active-light-primary me-2" data-kt-menu-dismiss="true">Reset</button>
-                                            <button type="submit" class="btn btn-sm btn-primary" data-kt-menu-dismiss="true">Apply</button>
-                                        </div>
-                                        <!--end::Actions-->
+                                        </form>
+                                        <!--end::Form-->
                                     </div>
-                                    <!--end::Form-->
-                                </div>
+                        
                                 <!--end::Menu 1-->
                                 @else
                                 @endif
@@ -535,9 +543,8 @@ btn-dark
                 <!--end::Toolbar-->
 
 
-
                 <!--begin::Container-->
-                <div id="kt_content_container" class="d-flex flex-column-fluid align-items-start container-xxl">
+                <div id="kt_content_container" class="d-flex flex-column-fluid align-items-start container-fluid main-wrapper">
                     <!--begin::Post-->
                     <div class="content flex-row-fluid" id="kt_content">
                         <div>
@@ -569,12 +576,12 @@ btn-dark
                 </div>
                 <!--end::Container-->
                 <!--begin::Footer-->
-                <div class="footer py-4 d-flex flex-lg-column" id="kt_footer" style="background-color: rgb(0, 171, 241);">
+                <div class="footer py-4 d-flex flex-lg-column" id="kt_footer">
                     <!--begin::Container-->
-                    <div class="container-xxl d-flex flex-column flex-md-row align-items-center justify-content-between">
+                    <div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
                         <!--begin::Copyright-->
                         <div class=" order-2 order-md-1">
-                            <span class="text-white text-muted fw-bold me-1">© UNEP 2022</span>
+                            <span class="text-white text-muted fw-bold me-1">© Enterprise Solutions Services <?php echo date("Y"); ?> </span>
                             <a href="https://www.unep.org" target="_blank" class="text-white">Powered by ESS</a>
                         </div>
                         <!--end::Copyright-->
@@ -3035,6 +3042,24 @@ btn-dark
     <!--begin::Javascript-->
     <script>
         var hostUrl = "assets/";
+
+        // Get the reset button element
+        const resetBtn = document.getElementById('reset-btn');
+        
+        // Get the filter options elements
+        const statusSelect = document.getElementById('status');
+        const internalCheckbox = document.querySelector('input[name="audience"][value="internal"]');
+        const externalCheckbox = document.querySelector('input[name="audience"][value="external"]');
+    
+        // Add an event listener to the reset button
+        resetBtn.addEventListener('click', () => {
+            // Reset the value of the status select element to an empty string
+            statusSelect.value = '';
+    
+            // Uncheck the internal and external checkboxes
+            internalCheckbox.checked = false;
+            externalCheckbox.checked = false;
+        });
     </script>
     <!--begin::Global Javascript Bundle(used by all pages)-->
 

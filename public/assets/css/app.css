@@ -1,0 +1,29 @@
+body{
+    background-color: #f2f2f2 !important;
+ 
+}
+
+.text-style{
+
+    color: white !important;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.toolbar{
+    background-image: url(../media/backgrounds/bluebg.png)!important;
+    background-size: cover;
+    background-color: #f2f2f2 !important;
+
+}
+
+.footer{
+    background-color: white !important;
+}
+
+.card{
+    /* background-image: url(../media/backgrounds/cardbg.png); */
+    background-color: white;
+    background-size: cover;
+
+}
