@@ -125,7 +125,7 @@
                             </div>
                             <!--end::Heaeder menu toggle-->
                             <a href="{{url('/')}}">
-                                <img alt="Logo" src="{{asset('assets/media/logos/apps-portal.png')}}" class="h-45px h-lg-45px" />
+                                <img alt="Logo" src="assets/media/logos/apps-portal.png" class="h-45px h-lg-45px" />
                             </a>
                         </div>
                         <!--end::Header Logo-->
