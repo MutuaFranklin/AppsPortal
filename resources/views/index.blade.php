@@ -233,7 +233,7 @@ No Applications published
                 @elseif($app->status->id == 2)
                 <!--begin::Progress-->
                 <div class="h-4px w-100 bg-light mb-2" data-bs-toggle="tooltip" title="This application has been released">
-                    <div class="bg-primary rounded h-4px" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="bg-primary rounded h-4px" role="progressbar" style="width: 100%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
                 <!--end::Progress-->
                 @else
