@@ -46211,7 +46211,7 @@ label.rating-label:hover ~ .rating-label > .svg-icon svg:hover [fill]:not(.perma
   width: 40px;
   height: 40px;
   border-radius: 0.475rem;
-  background-color: #1C3238;
+  background-color: white;
   margin-left: 1.5rem;
 }
 .stepper.stepper-pills .stepper-item .stepper-icon .stepper-check {
@@ -46220,8 +46220,9 @@ label.rating-label:hover ~ .rating-label > .svg-icon svg:hover [fill]:not(.perma
 }
 .stepper.stepper-pills .stepper-item .stepper-icon .stepper-number {
   font-weight: 600;
-  color: #0BB783 !important;
+  color: white !important;
   font-size: 1.25rem;
+  
 }
 .stepper.stepper-pills .stepper-item .stepper-label {
   display: flex;
@@ -46234,15 +46235,15 @@ label.rating-label:hover ~ .rating-label > .svg-icon svg:hover [fill]:not(.perma
   font-size: 1.25rem;
   margin-bottom: 0.3rem;
 }
-.stepper.stepper-pills .stepper-item .stepper-label .stepper-desc {
-  color: #565674;
+.stepper.stepper-pills . .stepper-label .stepper-desc {
+  color: white;
 }
 .stepper.stepper-pills .stepper-item.current {
   transition: color 0.2s ease, background-color 0.2s ease;
 }
 .stepper.stepper-pills .stepper-item.current .stepper-icon {
   transition: color 0.2s ease, background-color 0.2s ease;
-  background-color: #0BB783;
+  background-color: white;
 }
 .stepper.stepper-pills .stepper-item.current .stepper-icon .stepper-check {
   color: #0BB783;
@@ -46263,7 +46264,7 @@ label.rating-label:hover ~ .rating-label > .svg-icon svg:hover [fill]:not(.perma
   background-color: #1C3238;
 }
 .stepper.stepper-pills .stepper-item.current:last-child .stepper-icon .stepper-check, .stepper.stepper-pills .stepper-item.completed .stepper-icon .stepper-check {
-  color: #0BB783 !important;
+  color: white !important;
   display: inline-block;
 }
 .stepper.stepper-pills .stepper-item.current:last-child .stepper-icon .stepper-number, .stepper.stepper-pills .stepper-item.completed .stepper-icon .stepper-number {

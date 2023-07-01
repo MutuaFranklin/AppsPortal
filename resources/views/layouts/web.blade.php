@@ -82,36 +82,13 @@
         <div class="page d-flex flex-row flex-column-fluid">
             <!--begin::Wrapper-->
             <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
-                @guest
-                <div class="bg-black d-flex flex-column align-items-end">
-                    <div class="container-fluid-xxl d-flex flex-column align-items-end">
-                        <!--begin::Topbar-->
-                        <div class="right align-right align-items-center flex-shrink-0">
-                            @guest
-                            <a href="register" class="btn p-2 fw-bolder
-                            @if($page_title == 'Register')
-                                btn-primary
-                            @endif
-                            text-white">Register as Developer</a>
-                            <a href="login" class="btn p-2 fw-bolder
-                            @if($page_title == 'Login')
-                            btn-primary
-                            @endif
-                            text-white">Login as Developer</a>
-                            @endguest
-                            <!--begin::Sidebar Toggler-->
-                            <!--end::Sidebar Toggler-->
-                        </div>
-                        <!--end::Topbar-->
-                    </div>
-                </div>
-                @endguest
+               
                 <!--begin::Header-->
                 <div id="kt_header" class="header" data-kt-sticky="true" data-kt-sticky-name="header" data-kt-sticky-offset="{default: '200px', lg: '300px'}">
                     <!--begin::Container-->
                     <div class="container-fluid d-flex flex-grow-1 flex-stack">
                         <!--begin::Header Logo-->
-                        <div class="d-flex align-items-center ">
+                        <div class="d-flex align-items-center m-4">
                             <!--begin::Heaeder menu toggle-->
                             <div class="d-lg-none btn btn-icon btn-active-color-primary w-30px h-30px ms-n2 me-3" id="kt_header_menu_toggle">
                                 <!--begin::Svg Icon | path: icons/duotune/abstract/abs015.svg-->
@@ -154,17 +131,16 @@
                                     <!--end::Hidden input-->
                                     <!--begin::Icon-->
                                     <!--begin::Svg Icon | path: icons/duotune/general/gen004.svg-->
+                                                                        <!--end::Svg Icon-->
+                                    <!--end::Icon-->
+                                    <!--begin::Input-->                                    
+                                    <input type="text" class="form-control bg-transparent ps-13 fs-7 h-40px search-input" name="search" id="search" placeholder="Quick Search" data-kt-search-element="input" value="{{ $search ?? '' }}" />
                                     <span class="svg-icon svg-icon-2 svg-icon-gray-700 position-absolute top-50 translate-middle-y ms-4">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                             <path d="M21.7 18.9L18.6 15.8C17.9 16.9 16.9 17.9 15.8 18.6L18.9 21.7C19.3 22.1 19.9 22.1 20.3 21.7L21.7 20.3C22.1 19.9 22.1 19.3 21.7 18.9Z" fill="currentColor" />
                                             <path opacity="0.3" d="M11 20C6 20 2 16 2 11C2 6 6 2 11 2C16 2 20 6 20 11C20 16 16 20 11 20ZM11 4C7.1 4 4 7.1 4 11C4 14.9 7.1 18 11 18C14.9 18 18 14.9 18 11C18 7.1 14.9 4 11 4ZM8 11C8 9.3 9.3 8 11 8C11.6 8 12 7.6 12 7C12 6.4 11.6 6 11 6C8.2 6 6 8.2 6 11C6 11.6 6.4 12 7 12C7.6 12 8 11.6 8 11Z" fill="currentColor" />
                                         </svg>
                                     </span>
-                                    <!--end::Svg Icon-->
-                                    <!--end::Icon-->
-                                    <!--begin::Input-->                                    
-                                    <input type="text" class="form-control bg-transparent ps-13 fs-7 h-40px" name="search" id="search" placeholder="Quick Search" data-kt-search-element="input" value="{{ $search ?? '' }}" />
-
                                     {{-- <input type="text" class="form-control bg-transparent ps-13 fs-7 h-40px" name="term" placeholder="Quick Search" data-kt-search-element="input" value="{{isset($term)?$term:''}}" /> --}}
                                     <!--end::Input-->
                                     <!--begin::Spinner-->
@@ -188,6 +164,30 @@
                                 <!--end::Form-->
                             </div>
                             <!--end::Search-->
+                            @guest
+                            <div class="bg-black d-flex flex-column align-items-end">
+                                <div class="container-fluid-xxl d-flex flex-column align-items-end">
+                                    <!--begin::Topbar-->
+                                    <div class="right align-right align-items-center flex-shrink-0 ">
+                                        @guest
+                                        {{-- <a href="register" class="btn p-2 fw-bolder
+                                        @if($page_title == 'Register')
+                                            btn-primary
+                                        @endif
+                                        text-white">Register as Developer</a> --}}
+                                        <a href="login" class="btn p-2 fw-bolder
+                                        @if($page_title == 'Login')
+                                        
+                                        @endif
+                                        btn-white-bg fs-6">Login as Developer</a>
+                                        @endguest
+                                        <!--begin::Sidebar Toggler-->
+                                        <!--end::Sidebar Toggler-->
+                                    </div>
+                                    <!--end::Topbar-->
+                                </div>
+                            </div>
+                            @endguest
 
                             @auth
                             <!--begin::User-->
@@ -345,39 +345,21 @@
                     <!--begin::Container-->
                     <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack flex-wrap">
                         <!--begin::Page title-->
-                        <div class="page-title d-flex flex-column me-3">
+                        <div class="page-title d-flex flex-column m-3">
                             @if($page_type !== 'auth')
                             @if($page_type == 'page')
                             <!--begin::Breadcrumb-->
-                            <ul class="breadcrumb breadcrumb-dot fw-bold  fs-7 my-1">
-                                <!--begin::Item-->
-                                <li class="breadcrumb-item">
-                                    <a href="{{url('/')}}" class="text-style">Home</a>
-                                </li>
-                                <!--end::Item-->
-                                <!--begin::Item-->
-                                <li class="breadcrumb-item text-style">Review Apps</li>
-                                <!--end::Item-->
-                            </ul>
+                            <p><a href="{{url('/')}}" class="band-words"> Work smarter with apps</a></p>
+                            <p class="para">Add Apps to improve tasks and management</p>
+                            
                             <!--end::Breadcrumb-->
                             @else
                             <!--begin::Breadcrumb-->
-                            <ul class="breadcrumb breadcrumb-dot fw-bold text-gray-600 fs-7 my-1">
-                                <!--begin::Item-->
-                                <li class="breadcrumb-item">
-                                    <a href="{{url('/')}}" class="text-style">Home</a>
-                                </li>
-                                <!--end::Item-->
-                                <!--begin::Item-->
-                                <!-- <li class="breadcrumb-item text-gray-600">Apps</li> -->
-                                <!--end::Item-->
-                                <!--begin::Item-->
-                                <!-- <li class="breadcrumb-item text-gray-600">Projects</li> -->
-                                <!--end::Item-->
-                                <!--begin::Item-->
-                                <!-- <li class="breadcrumb-item text-gray-500">My Projects</li> -->
-                                <!--end::Item-->
-                            </ul>
+                            <h4><a href="{{url('/')}}" class="band-words"> Work smarter with apps</a></h5>
+                            <p class="para">Add Apps to improve tasks and management</p>
+
+
+                           
                             <!--end::Breadcrumb-->
                             @endif
                             @endif
@@ -386,7 +368,7 @@
                         <!--begin::Actions-->
                         <div class="d-flex align-items-center py-2 py-md-1">
                             <!--begin::Wrapper-->
-                            <div class="me-3">
+                            {{-- <div class="me-3">
                                 @if($page_type == 'auth')
                                 <!--begin::Breadcrumb-->
                                 <ul class="breadcrumb breadcrumb-dot fw-bold text-gray-600 fs-7 my-1">
@@ -401,103 +383,23 @@
                                 </ul>
                                 <!--end::Breadcrumb-->
                                 @elseif ($page_type == 'normal')
-                                <!--begin::Menu-->
-                                <a href="#" class="btn btn-light-primary fw-bolder" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                                    <!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
-                                    <span class="svg-icon svg-icon-5 svg-icon-gray-500 me-1">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                            <path d="M19.0759 3H4.72777C3.95892 3 3.47768 3.83148 3.86067 4.49814L8.56967 12.6949C9.17923 13.7559 9.5 14.9582 9.5 16.1819V19.5072C9.5 20.2189 10.2223 20.7028 10.8805 20.432L13.8805 19.1977C14.2553 19.0435 14.5 18.6783 14.5 18.273V13.8372C14.5 12.8089 14.8171 11.8056 15.408 10.964L19.8943 4.57465C20.3596 3.912 19.8856 3 19.0759 3Z" fill="currentColor" />
-                                        </svg>
-                                    </span>
-                                    <!--end::Svg Icon-->Filter
-                                </a>
-                                <!--begin::Menu 1-->
-                                    <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" id="kt_menu_624448b7ac77c">
-                                        <!--begin::Header-->
-                                        <div class="px-7 py-5">
-                                            <div class="fs-5 text-dark fw-bolder">Filter Options</div>
-                                        </div>
-                                        <!--end::Header-->
-                                        <!--begin::Menu separator-->
-                                        <div class="separator border-gray-200"></div>
-                                        <!--end::Menu separator-->
-                                        <!--begin::Form-->
-                                        <form action="" method="get" action="{{route('index')}}">
-                                            <div class="px-7 py-5" >
-                                                <!--begin::Input group-->
-                                                <div class="mb-10">
-                                                    <!--begin::Label-->
-                                                    <label class="form-label fw-bold">Status:</label>
-                                                    <!--end::Label-->
-                                                    <!--begin::Input-->
-                                                    <div>
-                                                        
-                                                        <select class="form-select form-select-solid" name="status" id="status" >
-                                                            <option></option>
-                                                            @foreach ($status as $s)
-                                                            <option value="{{ $s->id }}" {{ request('status') == $s->id ? 'selected' : '' }}>{{ $s->name }}</option>
-                                                            @endforeach
-                                                        </select>
-                                                        {{-- <select class="form-select form-select-solid" name="status" id="status" onchange="this.form.submit()">
-                                                            <option value="">All statuses</option>
-                                                            <option value="1" {{ $status == '1' ? 'selected' : '' }}>In Testing</option>
-                                                            <option value="2" {{ $status == '2' ? 'selected' : '' }}>In Production</option>
-                                                        </select> --}}
-                                                    </div>
-                                                    <!--end::Input-->
-                                                </div>
-                                                <!--end::Input group-->
-                                                <!--begin::Input group-->
-                                                <div class="mb-10">
-                                                    <!--begin::Label-->
-                                                    <label class="form-label fw-bold">Audience:</label>
-                                                    <!--end::Label-->
-                                                    <!--begin::Options-->
-                                                    <div class="d-flex">
-                                                        <!--begin::Options-->
-                                                        <label class="form-check form-check-sm form-check-custom form-check-solid me-5">
-                                                            <input class="form-check-input" type="checkbox" id="internal" name="internal" value="1" {{ request('internal') ? 'checked' : '' }} />
-                                                            <span class="form-check-label">Internal</span>
-                                                        </label>
-                                                        <!--end::Options-->
-                                                        <!--begin::Options-->
-                                                        <label class="form-check form-check-sm form-check-custom form-check-solid">
-                                                            <input class="form-check-input" type="checkbox" id="external" name="external" value="1" {{ request('external') ? 'checked' : '' }}/>
-                                                            <span class="form-check-label">External</span>
-                                                        </label>
-                                                        <!--end::Options-->
-                                                    </div>
-                                                    <!--end::Options-->
-                                                </div>
-                                                <!--end::Input group-->
-                                                <!--begin::Input group-->
-                                                <!--end::Input group-->
-                                                <!--begin::Actions-->
-                                                <div class="d-flex justify-content-end">
-                                                    <a href="{{url('/')}}" class="btn btn-sm btn-light btn-active-light-primary me-2" id="reset-btn">Reset</a>
-                                                    <button type="submit" class="btn btn-sm btn-primary" data-kt-menu-dismiss="true">Apply</button>
-                                                </div>
-                                                <!--end::Actions-->
-                                            </div>
-                                        </form>
-                                        <!--end::Form-->
-                                    </div>
+                            
                         
                                 <!--end::Menu 1-->
                                 @else
                                 @endif
 
                                 <!--end::Menu-->
-                            </div>
+                            </div> --}}
                             <!--end::Wrapper-->
                             @auth
 
                             @if(Auth::user()->role_id == 1 || Auth::user()->role_id == 3)
                             <a href="review" class="btn
                             @if ($page_title == 'Review Apps')
-                            btn-light-primary
+                            btn-white
 @else
-btn-dark
+btn-white
                             @endif
 
                             fw-bolder">Review Apps</a>
@@ -505,7 +407,7 @@ btn-dark
 
 
                             <!--begin::Button-->
-                            <a href="#" class="btn btn-dark fw-bolder" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Add New</a>
+                            <a href="#" class="btn btn-white fw-bolder" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Add New</a>
                             <!--begin::Menu 1-->
                             <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-primary fw-bold py-4 fs-6 w-250px w-md-300px" data-kt-menu="true">
                                 <!--begin::Menu separator-->
@@ -546,7 +448,7 @@ btn-dark
                 <!--begin::Container-->
                 <div id="kt_content_container" class="d-flex flex-column-fluid align-items-start container-fluid main-wrapper">
                     <!--begin::Post-->
-                    <div class="content flex-row-fluid" id="kt_content">
+                    <div class="content flex-row-fluid " id="kt_content">
                         <div>
                             @if(count($errors) > 0)
                             @foreach($errors->all() as $error)
@@ -580,18 +482,18 @@ btn-dark
                     <!--begin::Container-->
                     <div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
                         <!--begin::Copyright-->
-                        <div class=" order-2 order-md-1">
-                            <span class="text-white text-muted fw-bold me-1">© Enterprise Solutions Services <?php echo date("Y"); ?> </span>
-                            <a href="https://www.unep.org" target="_blank" class="text-white">Powered by ESS</a>
+                        <div class=" order-2 order-md-1 m-4">
+                            <span class="me-1 fs-7" style="color: #4D4D4D;">© Enterprise Solutions Services <?php echo date("Y"); ?> </span>
+                            <a href="https://www.unep.org" target="_blank" class="text-white fs-7">Powered by ESS</a>
                         </div>
                         <!--end::Copyright-->
                         <!--begin::Menu-->
-                        <ul class="menu menu-gray-600 menu-hover-primary fw-bold order-1">
+                        <ul class="menu menu-gray menu-hover-primary order-1">
                             <li class="menu-item">
-                                <a href="https://www.unep.org" target="_blank" class="menu-link px-2">About</a>
+                                <a href="https://www.unep.org" target="_blank" class="menu-link px-2 fs-7" style="color: #4D4D4D;">About</a>
                             </li>
                             <li class="menu-item">
-                                <a href="https://www.unep.org" target="_blank" class="menu-link px-2">Support</a>
+                                <a href="https://www.unep.org" target="_blank" class="menu-link px-2 fs-7" style="color: #4D4D4D;">Support</a>
                             </li>
                         </ul>
                         <!--end::Menu-->
@@ -1907,17 +1809,17 @@ btn-dark
                                 <!--begin::Step 1-->
                                 <div class="stepper-item current" data-kt-stepper-element="nav">
                                     <!--begin::Line-->
-                                    <div class="stepper-line w-40px"></div>
+                                    {{-- <div class="stepper-line w-40px"></div> --}}
                                     <!--end::Line-->
                                     <!--begin::Icon-->
                                     <div class="stepper-icon w-40px h-40px">
                                         <i class="stepper-check fas fa-check"></i>
-                                        <span class="stepper-number">1</span>
+                                        <span class="stepper-number stepno">1</span>
                                     </div>
                                     <!--end::Icon-->
                                     <!--begin::Label-->
                                     <div class="stepper-label">
-                                        <h3 class="stepper-title">Details</h3>
+                                        <h5 class="stepper-title">Details</h5>
                                         <div class="stepper-desc">Name your App</div>
                                     </div>
                                     <!--end::Label-->
@@ -1936,7 +1838,7 @@ btn-dark
                                     <!--end::Icon-->
                                     <!--begin::Label-->
                                     <div class="stepper-label">
-                                        <h3 class="stepper-title">Developers</h3>
+                                        <h4 class="stepper-title">Developers</h4>
                                         <div class="stepper-desc">Add collaborators</div>
                                     </div>
                                     <!--end::Label-->
@@ -1955,7 +1857,7 @@ btn-dark
                                     <!--begin::Icon-->
                                     <!--begin::Label-->
                                     <div class="stepper-label">
-                                        <h3 class="stepper-title">Description</h3>
+                                        <h4 class="stepper-title">Description</h4>
                                         <div class="stepper-desc">Describe your app</div>
                                     </div>
                                     <!--begin::Label-->
@@ -1974,7 +1876,7 @@ btn-dark
                                     <!--end::Icon-->
                                     <!--begin::Label-->
                                     <div class="stepper-label">
-                                        <h3 class="stepper-title">Usage</h3>
+                                        <h4 class="stepper-title">Usage</h4>
                                         <div class="stepper-desc">Fill in the app's usage details</div>
                                     </div>
                                     <!--end::Label-->
@@ -1993,7 +1895,7 @@ btn-dark
                                     <!--end::Icon-->
                                     <!--begin::Label-->
                                     <div class="stepper-label">
-                                        <h3 class="stepper-title">Completed</h3>
+                                        <h4 class="stepper-title">Completed</h4>
                                         <div class="stepper-desc">Review and Submit</div>
                                     </div>
                                     <!--end::Label-->
@@ -2075,6 +1977,8 @@ btn-dark
                                             <!--begin::Image input-->
                                             <div class="image-input image-input-empty" data-kt-image-input="true" style="background-image: url(assets/media/svg/avatars/ph.svg)">
                                                 <!--begin::Image preview wrapper-->
+
+                                                
                                                 <div class="image-input-wrapper w-200px h-125px"></div>
                                                 <!--end::Image preview wrapper-->
 
@@ -2150,7 +2054,9 @@ btn-dark
                                                                     <!--end::Checkbox-->
                                                                     <!--begin::Avatar-->
                                                                     <div class="symbol symbol-35px symbol-circle">
-                                                                        <img alt="Pic" src="{{$dev->dp_url}}">
+                                                                        {{-- <img alt="Pic" src="{{$dev->dp_url}}"> --}}
+                                                                        <img alt="Pic" src="{{$dev->dp_url?$dev->dp_url: asset('assets/media/uploads/user_images/blank_user.png')}}" />
+
                                                                     </div>
                                                                     <!--end::Avatar-->
                                                                     <!--begin::Details-->
@@ -2430,7 +2336,7 @@ btn-dark
                                 <div class="d-flex flex-stack pt-10">
                                     <!--begin::Wrapper-->
                                     <div class="me-2">
-                                        <button type="button" class="btn btn-lg btn-light-primary me-3" data-kt-stepper-action="previous">
+                                        <button type="button" class="btn btn-lg btn-secondary rounded-pill me-3" data-kt-stepper-action="previous">
                                             <!--begin::Svg Icon | path: icons/duotune/arrows/arr063.svg-->
                                             <span class="svg-icon svg-icon-3 me-1">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -2444,17 +2350,12 @@ btn-dark
                                     <!--end::Wrapper-->
                                     <!--begin::Wrapper-->
                                     <div>
-                                        <button type="submit" class="btn btn-lg btn-primary" data-kt-stepper-action="submit">Submit
+                                        <button type="submit" class="btn btn-lg btn-primary rounded-pill" data-kt-stepper-action="submit">Submit
                                             <!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
-                                            <span class="svg-icon svg-icon-3 ms-2 me-0">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                    <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="currentColor" />
-                                                    <path d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z" fill="currentColor" />
-                                                </svg>
-                                            </span>
+                                            
                                             <!--end::Svg Icon-->
                                         </button>
-                                        <button type="button" class="btn btn-lg btn-primary" data-kt-stepper-action="next">Continue
+                                        <button type="button" class="btn btn-lg btn-secondary rounded-pill" data-kt-stepper-action="next">Continue
                                             <!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
                                             <span class="svg-icon svg-icon-3 ms-1 me-0">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -2733,18 +2634,7 @@ btn-dark
                                             <!--end::Input-->
                                         </div>
                                         <!--end::Input group-->
-                                        <!--begin::Input group-->
-                                        <div class="fv-row mb-10">
-                                            <!--begin::Label-->
-                                            <label class="d-flex align-items-center fs-5 fw-bold mb-2">
-                                                <span class="required">Middle Name</span>
-                                            </label>
-                                            <!--end::Label-->
-                                            <!--begin::Input-->
-                                            <input type="text" class="form-control form-control-lg form-control-solid" name="middle_name" placeholder="" value="" />
-                                            <!--end::Input-->
-                                        </div>
-                                        <!--end::Input group-->
+                                
                                         <!--begin::Input group-->
                                         <div class="fv-row mb-10">
                                             <!--begin::Label-->
@@ -3062,7 +2952,7 @@ btn-dark
         });
     </script>
     <!--begin::Global Javascript Bundle(used by all pages)-->
-
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <script src="{{asset('/assets/js/scripts.bundle.js')}}"></script>
     <script src="{{asset('/assets/plugins/global/plugins.bundle.js')}}"></script>
     <!--end::Global Javascript Bundle-->

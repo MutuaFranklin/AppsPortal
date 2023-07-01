@@ -4,62 +4,64 @@
 
 
 <!--begin::Body-->
-<div class="d-flex flex-column-fluid flex-lg-row-auto justify-content-center justify-content-center p-12">
+<div class="login d-flex flex-column-fluid flex-lg-row-auto justify-content-end p-10">
     <!--begin::Wrapper-->
-    <div class="bg-body d-flex flex-center rounded-4 w-md-600px p-10">
+    <div class="d-flex flex-center rounded-4 w-md-800px p-10">
         <!--begin::Content-->
         <div class="w-md-400px">
             <!--begin::Form-->
             <form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" action="login" method="POST">
                 <!--begin::Heading-->
-                <div class="text-center mb-11">
+                <div class=" mb-11">
                     <!--begin::Title-->
-                    <h1 class="text-dark fw-bolder mb-3">Sign In</h1>
+                    <p class="fw-bolder mb-3 fs-2">Login</p>
                     <!--end::Title-->
                     <!--begin::Subtitle-->
-                    <div class="text-gray-500 fw-semibold fs-6">To register and update applications</div>
+                    <div class="fw-bolder fs-6">Welcome back! Please enter your details.</div>
                     <!--end::Subtitle=-->
                 </div>
                 <!--begin::Heading-->
                 <!--begin::Input group=-->
                 <div class="fv-row mb-8">
                     <!--begin::Label-->
-                    <label class="d-flex align-items-center fs-5 fw-bold mb-2">
-                        <span class="required">Email</span>
+                    <label class="d-flex align-items-center fs-4 fw-bolder mb-2">
+                        <span class="required fs-6">Email</span>
                         <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Fill in your email"></i>
                     </label>
                     <!--end::Label-->
                     <!--begin::Input-->
-                    <input type="email" class="form-control form-control-lg form-control-solid" name="email" placeholder="" value="" />
+                    <input type="email" class="form-control form-control-lg form-control-solid form-input-style" name="email" placeholder="" value="" />
+
+                    {{-- <input type="email" class="form-control form-control-lg form-control-solid" name="email" placeholder="" value="" style="border-radius: 20px; border: 1px solid #4D4D4D;" /> --}}
                     <!--end::Input-->
                 </div>
                 @csrf
                 <!--end::Input group=-->
                 <div class="fv-row mb-3">
                     <!--begin::Label-->
-                    <label class="d-flex align-items-center fs-5 fw-bold mb-2">
-                        <span class="required">Password</span>
+                    <label class="d-flex align-items-center fs-4 fw-bolder mb-2">
+                        <span class="required fs-6">Password</span>
                         <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Fill in your password"></i>
                     </label>
                     <!--end::Label-->
                     <!--begin::Input-->
-                    <input type="password" class="form-control form-control-lg form-control-solid" name="password" placeholder="" value="" />
+                    <input type="password" class="form-control form-control-lg form-control-solid form-input-style" name="password" placeholder="" value=""  />
                     <!--end::Input-->
                 </div>
                 <!--end::Input group=-->
                 <!--begin::Wrapper-->
-                <div class="d-flex flex-stack flex-wrap gap-3 fs-base fw-semibold mb-8">
+                <div class="d-flex flex-stack flex-wrap gap-3 fs-base fw-bolder mb-8">
                     <div></div>
                     <!--begin::Link-->
-                    <a href="/forgot-password" class="link-primary">Forgot Password ?</a>
+                    <a href={{url('forgot-password')}} class="forgot-password">Forgot Password ?</a>
                     <!--end::Link-->
                 </div>
                 <!--end::Wrapper-->
                 <!--begin::Submit button-->
                 <div class="d-grid mb-10">
-                    <button type="submit" id="kt_sign_in_submit" class="btn btn-primary">
+                    <button type="submit" id="kt_sign_in_submit" class="btn login-btn">
                         <!--begin::Indicator label-->
-                        <span class="indicator-label">Sign In</span>
+                        <span class="indicator-label">Login</span>
                         <!--end::Indicator label-->
                         <!--begin::Indicator progress-->
                         <span class="indicator-progress">Please wait...
@@ -69,8 +71,8 @@
                 </div>
                 <!--end::Submit button-->
                 <!--begin::Sign up-->
-                <div class="text-gray-500 text-center fw-semibold fs-6">No Account yet?
-                    <a href="/register" class="link-primary">Register</a></div>
+                <div class=" text-center fw-bolder fs-6">Don’t have an account?
+                    <a href={{url('register')}} class="forgot-password">Sign Up</a></div>
                 <!--end::Sign up-->
             </form>
             <!--end::Form-->

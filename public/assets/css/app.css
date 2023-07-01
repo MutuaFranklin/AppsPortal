@@ -1,6 +1,7 @@
 body{
     background-color: #f2f2f2 !important;
- 
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+    color: #4D4D4D !important;
 }
 
 .text-style{
@@ -11,11 +12,98 @@ body{
 }
 
 .toolbar{
-    background-image: url(../media/backgrounds/bluebg.png)!important;
+    /* background-image: url(../media/backgrounds/bluebg.png)!important; */
+    background-image: url(../media/backgrounds/Band.png)!important;
     background-size: cover;
     background-color: #f2f2f2 !important;
+    height: 100px;
 
 }
+
+.band-words{
+    color: white !important;
+    margin-top: 5px !important;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.para{
+    color: rgb(236, 246, 247) !important;
+    margin-top: 5px !important;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+    font-weight: lighter !important;
+    font-size: 15px;
+}
+
+
+.app-icon{
+    height: 100px;
+    width: 100px;
+
+}
+
+.form-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+
+.btn-container {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    
+}
+
+.status-btn{
+    border-radius: 10px !important;
+    margin-bottom: 5px;
+}
+
+.custom-btn {
+    background-color: white !important;
+    color: black !important;
+    border: none;
+    box-shadow: 0 0 5px 0 rgb(11, 1, 1) !important;
+    padding: 10px 20px;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    margin-bottom: 5px !important;
+    border-radius: 5px;
+}
+
+.custom-btn:hover {
+    box-shadow: 0 0 10px 0 black;
+    background-color: rgb(176, 217, 251) !important;
+}
+
+.apply-btn{
+    background-color: #009FE3 !important;
+    color: white;
+    border-radius: 5px !important;
+}
+
+.apply-btn:hover{
+    background-color: #18a9e7 !important;
+    color: white;
+}
+
+.filter-text {
+    margin-right: 5px;
+}
+.btn-white-bg {
+    background-color: white; 
+}
+
+.btn-white-bg:hover{
+    color: deepskyblue;
+}
+
+
+
+
 
 .footer{
     background-color: white !important;
@@ -25,5 +113,138 @@ body{
     /* background-image: url(../media/backgrounds/cardbg.png); */
     background-color: white;
     background-size: cover;
+
+}
+
+.production-color {
+    background-color: rgb(0, 159, 227, 0.2); /* Custom background color for success state */
+    border-radius: 15px;
+    color: #4D4D4D;
+    height: 22px;
+}
+
+.testing-color {
+    background-color: #FBDDA4; /* Custom background color for primary state */
+    border-radius: 15px;
+    color: #4D4D4D;
+    height: 22px;
+
+
+}
+
+.Unpublished {
+    background-color: #7d7d80; /* Custom background color for primary state */
+    border-radius: 15px;
+    color: white;
+    /* height: 22px; */
+
+
+}
+
+.btn-white {
+    background-color: white;
+    color: black !important;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.table-header{
+    border-bottom:2px solid rgba(77, 77, 77, 0.4) !important;
+}
+
+.row-border{
+    border-bottom: rgba(77, 77, 77, 0.4) solid 0.5pt !important;
+}
+
+
+.stepper-icon{
+    border-radius: 5px !important;
+    height: 40px !important;
+    width: 40px !important;
+    font-size: 15px;
+}
+
+.stepper-number{
+    color: white !important;  
+}
+
+.stepper-item.current .stepper-icon {
+    background-color: #009FE3 !important;
+}
+
+.stepper-item.current .stepper-icon .stepper-check {
+    color: white !important;
+}
+
+.stepper-item:not(.current) .stepper-icon {
+    background-color: #4d4d4d !important;
+    color: white !important;
+}
+
+.stepper-item:not(.current) .stepper-icon .stepper-check{
+    color: white !important;
+}
+
+.stepno{
+    color: white !important;
+}
+
+
+
+
+/* Login */
+
+.login{
+    background-image: url(../media/backgrounds/Login.png)!important;
+    background-size:cover;
+    background-color: #f2f2f2 !important;
+    border-radius: 10px;
+    
+
+}
+
+.login-btn{
+    background-color: #009FE3;
+    color: white;
+    border-radius: 10px !important;
+    font-weight: bold;
+}
+
+.forgot-password{
+    color: #009FE3;
+}
+
+.form-input-style{
+
+    border-radius: 5px !important;
+    border: 1px solid rgba(77, 77, 77, 1) !important;
+    color: #4D4D4D;
+  
+}
+
+.search-input{
+    border-radius: 7px !important;
+
+}
+
+
+/* Register */
+
+.signup{
+    background-image: url(../media/backgrounds/Login.png)!important;
+    background-size: cover;
+    background-color: #f2f2f2 !important;
+    border-radius: 10px;
+
+
+}
+
+
+
+.register-btn{
+    background-color: #009FE3;
+    color: white;
+    border-radius: 10px !important;
+    font-weight: bold;
 
 }

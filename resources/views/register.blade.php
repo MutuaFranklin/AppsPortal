@@ -4,18 +4,18 @@
 
 
 <!--begin::Body-->
-<div class="d-flex flex-column-fluid flex-lg-row-auto justify-content-center justify-content-center p-12">
+<div class="signup d-flex flex-column-fluid flex-lg-row-auto justify-content-end p-12">
     <!--begin::Wrapper-->
-    <div class="bg-body d-flex flex-center rounded-4 w-md-600px p-10">
+    <div class="d-flex flex-center rounded-4 w-md-800px p-10">
         <!--begin::Content-->
-        <div class="w-md-400px w-lg-600px">
+        <div class="w-md-400px w-lg-500px">
             <!--begin::Heading-->
-            <div class="text-center mb-11">
+            <div class="mb-11">
                 <!--begin::Title-->
-                <h1 class="text-dark fw-bolder mb-3">Register</h1>
+                <h1 class="fw-bolder mb-3 fs-2" >Sign Up</h1>
                 <!--end::Title-->
                 <!--begin::Subtitle-->
-                <div class="text-gray-500 fw-semibold fs-6">To add and publish applications</div>
+                <div class="fw-bolder fs-6">Sign up to add and publish applications.</div>
                 <!--end::Subtitle=-->
             </div>
             <!--begin::Heading-->
@@ -24,144 +24,73 @@
                 <!--begin::Step 1-->
                 <div class="current" data-kt-stepper-element="content">
                     <div class="w-lg-450 w-xl-450 row">
-                        <div class="fv-row mb-10 d-flex flex-column align-items-center">
-
-                            <!--begin::Image input-->
-                            <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
-                                <!--begin::Preview existing avatar-->
-                                <div class="image-input-wrapper w-125px h-125px" style="background-image: url(assets/media/avatars/blank.png)"></div>
-                                <!--end::Preview existing avatar-->
-                                <!--begin::Label-->
-                                <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
-                                    <i class="bi bi-pencil-fill fs-7"></i>
-                                    <!--begin::Inputs-->
-                                    <input type="file" name="profile_image" accept=".png, .jpg, .jpeg" />
-                                    <input type="hidden" name="avatar_remove" />
-                                    <!--end::Inputs-->
-                                </label>
-                                <!--end::Label-->
-                                <!--begin::Cancel-->
-                                <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
-                                    <i class="bi bi-x fs-2"></i>
-                                </span>
-                                <!--end::Cancel-->
-                                <!--begin::Remove-->
-                                <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
-                                    <i class="bi bi-x fs-2"></i>
-                                </span>
-                                <!--end::Remove-->
-                            </div>
-                            <!--end::Image input-->
-                            <!--begin::Hint-->
-                            <div class="mt-2">Upload your profile image</div>
-                            <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
-                            <!--end::Hint-->
-                        </div>
+                       
                         <!--begin::Input group-->
-                        <div class="fv-row mb-10 col-lg-4">
+                        <div class="fv-row mb-10 col-lg-6">
                             <!--begin::Label-->
-                            <label class="d-flex align-items-center fs-5 fw-bold mb-2">
-                                <span class="required">First Name</span>
+                            <label class="d-flex align-items-center fs-5 fw-bolder mb-2">
+                                <span class="required fs-6">First Name</span>
                                 <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Input your first name"></i>
                             </label>
                             <!--end::Label-->
                             <!--begin::Input-->
-                            <input type="text" class="form-control form-control-lg form-control-solid" name="first_name" placeholder="" value="" />
+                            <input type="text" class="form-control form-control-lg form-control-solid form-input-style" name="first_name" placeholder="" value="" />
                             <!--end::Input-->
                         </div>
                         <!--end::Input group-->
                         <!--begin::Input group-->
-                        <div class="fv-row mb-10 col-lg-4">
-                            <!--begin::Label-->
-                            <label class="d-flex align-items-center fs-5 fw-bold mb-2">
-                                <span>Middle Name</span>
-                            </label>
-                            <!--end::Label-->
-                            <!--begin::Input-->
-                            <input type="text" class="form-control form-control-lg form-control-solid" name="middle_name" placeholder="" value="" />
-                            <!--end::Input-->
-                        </div>
+                
                         <!--end::Input group-->
                         <!--begin::Input group-->
-                        <div class="fv-row mb-10 col-lg-4">
+                        <div class="fv-row mb-10 col-lg-6">
                             <!--begin::Label-->
-                            <label class="d-flex align-items-center fs-5 fw-bold mb-2">
-                                <span class="required">Last Name</span>
+                            <label class="d-flex align-items-center fs-5 fw-bolder mb-2">
+                                <span class="required fs-6">Last Name</span>
                                 <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Input your last name"></i>
                             </label>
                             <!--end::Label-->
                             <!--begin::Input-->
-                            <input type="text" class="form-control form-control-lg form-control-solid" name="last_name" placeholder="" value="" />
+                            <input type="text" class="form-control form-control-lg form-control-solid form-input-style" name="last_name" placeholder="" value="" />
                             <!--end::Input-->
                         </div>
                         <!--end::Input group-->
                         <!--begin::Input group-->
                         <div class="fv-row mb-10">
                             <!--begin::Label-->
-                            <label class="d-flex align-items-center fs-5 fw-bold mb-2">
-                                <span class="required">Email</span>
+                            <label class="d-flex align-items-center fs-5 fw-bolder mb-2">
+                                <span class="required fs-6">Email</span>
                                 <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Input your email"></i>
                             </label>
                             <!--end::Label-->
                             <!--begin::Input-->
-                            <input type="email" class="form-control form-control-lg form-control-solid" name="email" placeholder="" value="" />
+                            <input type="email" class="form-control form-control-lg form-control-solid form-input-style" name="email" placeholder="" value="" />
                             <!--end::Input-->
                         </div>
-                        <!--end::Input group-->
-                        <!--begin::Input group-->
-                        {{-- <div class="fv-row mb-10">
-                            <!--begin::Label-->
-                            <label class="d-flex align-items-center fs-5 fw-bold mb-2">
-                                <span class="required">DP Url</span>
-                                <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Specify your unique app name"></i>
-                            </label>
-                            <!--end::Label-->
-                            <!--begin::Input-->
-                            <input type="text" class="form-control form-control-lg form-control-solid" name="dp_url" placeholder="" value="" />
-                            <!--end::Input-->
-                        </div> --}}
-                        <!--end::Input group-->
-                        <!--begin::Input group-->
-                        {{-- <div class="fv-row mb-10">
-                            <!--begin::Label-->
-                            <label class="d-flex align-items-center fs-5 fw-bold mb-2">
-                                <span class="required">Role</span>
-                                <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Specify your unique app name"></i>
-                            </label>
-                            <!--end::Label-->
-                            <!--begin::Input-->
-                            <select class="form-control form-control-lg form-control-solid" name="role_id" id="role">
-                                <option value="" selected disabled>Select Role</option>
-                                @foreach ($roles as $role)
-                                <option value="{{$role->id}}">{{$role->name}}</option>
-                        @endforeach
-                        </select>
-                        <!--end::Input-->
-                    </div> --}}
+                        
                     <!--end::Input group-->
                     <!--begin::Input group-->
                     <div class="fv-row mb-10">
                         <!--begin::Label-->
-                        <label class="d-flex align-items-center fs-5 fw-bold mb-2">
-                            <span class="required">Password</span>
+                        <label class="d-flex align-items-center fs-5 fw-bolder mb-2">
+                            <span class="required fs-6">Password</span>
                             <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Input your password"></i>
                         </label>
                         <!--end::Label-->
                         <!--begin::Input-->
-                        <input type="password" class="form-control form-control-lg form-control-solid" name="password" placeholder="" value="" />
+                        <input type="password" class="form-control form-control-lg form-control-solid form-input-style fs-6" name="password" placeholder="" value="" />
                         <!--end::Input-->
                     </div>
                     <!--end::Input group-->
                     <!--begin::Input group-->
                     <div class="fv-row mb-10">
                         <!--begin::Label-->
-                        <label class="d-flex align-items-center fs-5 fw-bold mb-2">
-                            <span class="required">Confirm Password</span>
+                        <label class="d-flex align-items-center fs-5 fw-bolder mb-2">
+                            <span class="required fs-6">Confirm Password</span>
                             <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Confirm your password"></i>
                         </label>
                         <!--end::Label-->
                         <!--begin::Input-->
-                        <input type="password" class="form-control form-control-lg form-control-solid" name="password_confirmation" placeholder="" value="" />
+                        <input type="password" class="form-control form-control-lg form-control-solid form-input-style fs-6" name="password_confirmation" placeholder="" value="" />
                         <!--end::Input-->
                     </div>
                     <!--end::Input group-->
@@ -173,9 +102,9 @@
         <div class="pt-10">
             <!--begin::Submit button-->
             <div class="d-grid mb-10">
-                <button type="submit" id="kt_sign_in_submit" class="btn btn-primary">
+                <button type="submit" id="kt_sign_in_submit" class="btn register-btn">
                     <!--begin::Indicator label-->
-                    <span class="indicator-label">Register
+                    <span class="indicator-label">Sign Up
                         <!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
                         <span class="svg-icon svg-icon-3 ms-1 me-0">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">

@@ -21,8 +21,8 @@ class UsersController extends Controller
         }
 
         $base_colors = [
-            "#00A3FF",
-            "#50CD89",
+            "rgba(246, 170, 28, 0.7)",
+            "rgba(0, 159, 227, 0.7)",
             "#E4E6EF",
         ];
         $data = [];
@@ -39,7 +39,7 @@ class UsersController extends Controller
         $search = request('search');
 
         // get the status value from the request
-        $status = request('status');
+        $status = request('status', 2);
 
         $internal = request('internal');
         $external = request('external');
@@ -48,8 +48,11 @@ class UsersController extends Controller
             'page_title' => 'Home',
             'page_type' => 'normal',
             'applications' => Application::get(),
-            'published_applications' => Application::when(request('status'), function($query) {
-                return $query->where('status_id', request('status'));
+            // 'published_applications' => Application::when(request('status'), function($query) {
+            //     return $query->where('status_id', request('status'));
+            // })
+            'published_applications' => Application::when($status != 'all', function ($query) use ($status) {
+                return $query->where('status_id', request('status', 2));
             })
             ->when(request('search'), function($query) {
                 $search = request('search');
@@ -65,7 +68,7 @@ class UsersController extends Controller
                 return $query->where('internal', 0);
             })
             ->whereNotNull('published_by')
-            ->paginate(4),               
+            ->paginate(12),               
             // 'published_applications' => Application::whereNotNull('published_by')->paginate(4),
             'users_count' => Application::sum('internal_users_no') + Application::sum('external_users_no'),
             'max_users' => !empty($user_base) ? max($user_base) : 0,
@@ -264,7 +267,7 @@ class UsersController extends Controller
             return $this->validate($form, [
                 'name' => 'required|max:255',
                 'description' => 'required',
-                'short_description' => 'required|max:255',
+                'short_description' => 'required|max:355',
                 'link' => 'required',
                 'logo_url' => 'required',
                 'internal',

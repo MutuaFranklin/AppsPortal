@@ -36568,7 +36568,7 @@ a:hover {
 .card .card-header .card-title {
   display: flex;
   align-items: center;
-  margin: 0.5rem;
+  margin: 2px;
   margin-right: 0;
 }
 .card .card-header .card-title.flex-column {
@@ -36576,7 +36576,7 @@ a:hover {
   justify-content: center;
 }
 .card .card-header .card-title .card-icon {
-  margin-left: 0.75rem;
+  margin-left: 2px;
   line-height: 0;
 }
 .card .card-header .card-title .card-icon i {
@@ -45710,7 +45710,7 @@ code:not([class*=language-]) {
 }
 
 .badge-light-primary {
-  color: #50CD89;
+  color: Black;
   background-color: #E8FFF3;
 }
 
@@ -45729,7 +45729,7 @@ code:not([class*=language-]) {
 }
 
 .badge-light-success {
-  color: #00B2FF;
+  color: black;
   background-color: #F1FAFF;
 }
 

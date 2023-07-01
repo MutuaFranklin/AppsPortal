@@ -30,10 +30,18 @@ class Application extends Model
         'deleted_by',
     ];
 
+    public function leadDeveloper()
+    {
+        return $this->belongsTo(User::class, 'lead_dev');
+    }
+    
+
     public function status()
     {
         return $this->belongsTo(Status::class);
     }
+
+    
 
     public function developers()
     {
