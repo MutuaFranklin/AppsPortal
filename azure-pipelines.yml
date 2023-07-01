@@ -1,0 +1,59 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+  trigger:
+    branches:
+      include:
+        - main  # Replace with the branch you want to trigger the pipeline
+
+  pr:
+    branches:
+      include:
+        - main
+
+  jobs:
+  - job: DeployWebApp
+    displayName: 'Deploy to Azure Web App'
+    pool:
+      vmImage: 'ubuntu-latest'
+
+    steps:
+    - task: UseDotNet@2
+      displayName: 'Install .NET SDK'
+      inputs:
+        version: '5.x'
+    
+    - script: |
+        echo 'PHP|7.4' >> $GITHUB_ENV
+      displayName: 'Set PHP version'
+
+    - script: |
+        cd $(System.DefaultWorkingDirectory)
+        curl -sS https://getcomposer.org/installer -o composer-setup.php
+        php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+        php -r "unlink('composer-setup.php');"
+      displayName: 'Install Composer'
+
+    - script: |
+        cd $(System.DefaultWorkingDirectory)
+        composer install --no-interaction --prefer-dist --optimize-autoloader --ignore-platform-reqs
+      displayName: 'Install Composer dependencies'
+
+    - task: ArchiveFiles@2
+      displayName: 'Archive files'
+      inputs:
+        rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
+        includeRootFolder: false
+        archiveType: 'zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+        replaceExistingArchive: true
+
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish artifact'
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+        ArtifactName: 'drop'
+        publishLocation: 'Container'
+
